@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezyn - Sols en Résine Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #e5e7eb;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            background-attachment: fixed;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-cta {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e5e7eb;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 3rem 6rem;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, #eef2ff 0%, #f3e8ff 100%);
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge span {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-visual {
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .hero-image {
+            aspect-ratio: 16/9;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-content {
+            text-align: center;
+            color: white;
+        }
+
+        .hero-image-content .icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: white;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 3rem;
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .service-image {
+            height: 250px;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #f1f5f9;
+        }
+
+        .service-content p {
+            color: #94a3b8;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .service-price {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #8b5cf6;
+            font-weight: 500;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-info h3 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-info p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+        }
+
+        /* Simulator Section */
+        .simulator {
+            padding: 8rem 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .simulator-container {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1.25rem;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: rgba(15, 23, 42, 0.6);
+            color: #e5e7eb;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .slider-container {
+            margin-top: 1rem;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: rgba(139, 92, 246, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .slider-value {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-price {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .result-detail {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .result-breakdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .breakdown-item {
+            text-align: left;
+        }
+
+        .breakdown-label {
+            font-size: 0.875rem;
+            opacity: 0.85;
+        }
+
+        .breakdown-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.25rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #f1f5f9;
+        }
+
+        .contact > p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .contact-detail {
+            color: #94a3b8;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        footer .logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: #9ca3af;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                justify-content: center;
+            }
+            
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-price {
+                font-size: 2.5rem;
+            }
+
+            .result-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo gradient-text">Rezyn</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#simulateur">Simulateur</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-primary" onclick="document.querySelector('#simulateur').scrollIntoView({behavior: 'smooth'})">Devis gratuit</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="gradient-text">Sols en résine premium</span>
+        </div>
+        <h1>
+            L'élégance<br>
+            <span class="gradient-text">redéfinie</span>
+        </h1>
+        <p>
+            Créez des espaces exceptionnels avec nos solutions de sols en résine sur mesure, 
+            alliant design contemporain et performance durable.
+        </p>
+        <button class="btn-primary" onclick="document.querySelector('#simulateur').scrollIntoView({behavior: 'smooth'})">
+            Calculer mon devis →
+        </button>
+
+        <div class="hero-visual">
+            <div class="hero-image">
+                <div class="hero-image-content">
+                    <div class="icon">✨</div>
+                    <p>Excellence & Innovation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Nos expertises</h2>
+            <p>Des solutions adaptées à chaque environnement</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" data-price="120">
+                <div class="service-image" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"></div>
+                <div class="service-content">
+                    <h3>Résine Époxy Standard</h3>
+                    <p>Solution économique et durable pour tous types d'espaces. Finition mate ou satinée, large choix de couleurs.</p>
+                    <div class="service-price">À partir de 120€/m²</div>
+                </div>
+            </div>
+            <div class="service-card" data-price="180">
+                <div class="service-image" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"></div>
+                <div class="service-content">
+                    <h3>Résine Décorative</h3>
+                    <p>Effets 3D, paillettes, marbré et finitions personnalisées. Transformez vos sols en véritables œuvres d'art.</p>
+                    <div class="service-price">À partir de 180€/m²</div>
+                </div>
+            </div>
+            <div class="service-card" data-price="220">
+                <div class="service-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+                <div class="service-content">
+                    <h3>Résine Premium</h3>
+                    <p>Qualité haut de gamme avec résistance maximale. Finitions brillantes, antidérapantes et ultra-résistantes.</p>
+                    <div class="service-price">À partir de 220€/m²</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="gallery">
+        <div class="section-header">
+            <h2>Nos réalisations</h2>
+            <p>Découvrez nos projets qui inspirent</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                    🏠
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Villa Moderne Paris 16ème</h3>
+                        <p>Résine époxy brillante - 150m²</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                    🏢
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Showroom Luxe</h3>
+                        <p>Résine décorative effet 3D - 200m²</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                    🏭
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Usine Pharmaceutique</h3>
+                        <p>Résine industrielle antidérapante - 800m²</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
+                    🏠
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Loft Parisien</h3>
+                        <p>Résine effet béton ciré - 120m²</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)">
+                    🏪
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Boutique de Mode</h3>
+                        <p>Résine paillettes or - 80m²</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)">
+                    🏋️
+                </div>
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h3>Salle de Sport Premium</h3>
+                        <p>Résine anti-choc renforcée - 300m²</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulator Section -->
+    <section id="simulateur" class="simulator">
+        <div class="section-header">
+            <h2>Simulateur de devis</h2>
+            <p>Estimez instantanément le coût de votre projet</p>
+        </div>
+
+        <div class="simulator-container">
+            <form id="quoteForm">
+                <div class="form-group">
+                    <label for="surfaceType">Type de surface</label>
+                    <select id="surfaceType" onchange="calculateQuote()">
+                        <option value="120">Résine Époxy Standard - 120€/m²</option>
+                        <option value="180">Résine Décorative - 180€/m²</option>
+                        <option value="220">Résine Premium - 220€/m²</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="surface">Surface (m²) : <span id="surfaceValue">50</span> m²</label>
+                    <div class="slider-container">
+                        <input type="range" id="surface" class="slider" min="10" max="500" value="50" oninput="updateSurfaceValue(); calculateQuote()">
+                        <div class="slider-value">
+                            <span>10 m²</span>
+                            <span>500 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="preparation">Préparation du sol</label>
+                    <select id="preparation" onchange="calculateQuote()">
+                        <option value="0">Surface déjà préparée</option>
+                        <option value="15">Préparation légère - +15€/m²</option>
+                        <option value="30">Préparation complète - +30€/m²</option>
+                        <option value="50">Rénovation importante - +50€/m²</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="finition">Finition</label>
+                    <select id="finition" onchange="calculateQuote()">
+                        <option value="0">Standard (inclus)</option>
+                        <option value="20">Antidérapante - +20€/m²</option>
+                        <option value="35">Brillance haute - +35€/m²</option>
+                        <option value="45">Effet 3D/Métallisé - +45€/m²</option>
+                    </select>
+                </div>
+
+                <div class="result-card" id="resultCard">
+                    <div class="result-label">Estimation de votre projet</div>
+                    <div class="result-price" id="totalPrice">6 000€</div>
+                    <div class="result-detail">
+                        <div class="result-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">Surface totale</div>
+                                <div class="breakdown-value" id="resultSurface">50 m²</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">Prix au m²</div>
+                                <div class="breakdown-value" id="resultPricePerM2">120€/m²</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.875rem; opacity: 0.85;">
+                        ✓ Devis gratuit et sans engagement<br>
+                        ✓ Intervention sous 48h<br>
+                        ✓ Garantie 10 ans
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div>
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Années d'expérience</div>
+            </div>
+            <div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Projets réalisés</div>
+            </div>
+            <div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Clients satisfaits</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Parlons de votre projet</h2>
+        <p>Notre équipe est prête à donner vie à vos idées</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <div class="contact-title">Téléphone</div>
+                <div class="contact-detail">01 23 45 67 89</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <div class="contact-title">Email</div>
+                <div class="contact-detail">contact@rezyn.fr</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <div class="contact-title">Adresse</div>
+                <div class="contact-detail">Paris, France</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo gradient-text">Rezyn</div>
+        <p>© 2025 Rezyn. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Update surface value display
+        function updateSurfaceValue() {
+            const surface = document.getElementById('surface').value;
+            document.getElementById('surfaceValue').textContent = surface;
+        }
+
+        // Calculate quote
+        function calculateQuote() {
+            const surfaceType = parseFloat(document.getElementById('surfaceType').value);
+            const surface = parseFloat(document.getElementById('surface').value);
+            const preparation = parseFloat(document.getElementById('preparation').value);
+            const finition = parseFloat(document.getElementById('finition').value);
+
+            const pricePerM2 = surfaceType + preparation + finition;
+            const totalPrice = pricePerM2 * surface;
+
+            // Apply volume discount
+            let discount = 0;
+            if (surface >= 100) discount = 0.10;
+            else if (surface >= 50) discount = 0.05;
+
+            const finalPrice = totalPrice * (1 - discount);
+
+            // Update display
+            document.getElementById('totalPrice').textContent = 
+                new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(finalPrice);
+            document.getElementById('resultSurface').textContent = surface + ' m²';
+            document.getElementById('resultPricePerM2').textContent = 
+                new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(pricePerM2) + '/m²';
+        }
+
+        // Initialize calculator
+        calculateQuote();
+    </script>
+</body>
+</html>
