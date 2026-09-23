@@ -252,6 +252,10 @@
 }
 
 .piece__frame {
+  /* Impératif : c'est un <span>, donc une boîte en ligne par défaut — et
+     sur une boîte en ligne, overflow:hidden et aspect-ratio sont ignorés.
+     Le zoom au survol débordait alors sur le texte voisin. */
+  display: block;
   position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
@@ -696,6 +700,7 @@
 .swatch { display: grid; gap: var(--space-3); }
 
 .swatch__chip {
+  display: block;
   aspect-ratio: 1;
   transition: transform var(--dur-base) var(--ease-out);
 }
