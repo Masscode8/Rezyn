@@ -166,13 +166,13 @@
 
 .nav__drawer .btn { margin-top: var(--space-6); }
 
-@media (max-width: 1040px) {
+@media (max-width: 1140px) {
   .nav__links { display: none; }
   .nav__toggle { display: grid; }
   .nav__actions .btn { display: none; }
 }
 
-@media (min-width: 1041px) {
+@media (min-width: 1141px) {
   .nav__drawer { display: none; }
 }
 

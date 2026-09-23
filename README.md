@@ -24,7 +24,8 @@ Puis ouvrez <http://localhost:4180>.
 |---|---|
 | `index.html` | Accueil en quatre temps : le métier, la collection, les matières, **deux portes** — estimation ou contact |
 | `finitions.html` | Les quatre matières, nuancier, sols techniques, méthode en cinq étapes, questions fréquentes |
-| `realisations.html` | Collection filtrable + visionneuse, avant/après, chiffres, témoignages |
+| `realisations.html` | Collection filtrable + visionneuse, avant/après, témoignages |
+| `ateliers.html` | Les quatre formats d'atelier, le déroulé, la réservation d'un créneau, questions fréquentes |
 | `simulateur.html` | Estimation en direct, détaillée ligne par ligne |
 | `contact.html` | Coordonnées + demande de devis validée |
 
@@ -38,7 +39,8 @@ intérieures.
 
 ```
 claude_rezyn/
-├── index.html · finitions.html · realisations.html · simulateur.html · contact.html
+├── index.html · finitions.html · realisations.html · ateliers.html
+│   · simulateur.html · contact.html
 ├── css/
 │   ├── tokens.css        Design tokens (primitive → sémantique → composant)
 │   ├── base.css          Reset, typographie, rythme, accessibilité, reduced-motion
@@ -47,6 +49,7 @@ claude_rezyn/
 ├── js/
 │   ├── core.js           Nav, révélations, chiffres, questions, avant/après
 │   ├── gallery.js        Filtres + visionneuse accessible
+│   ├── booking.js        Formats d'atelier, calendrier récurrent, demande de créneau
 │   ├── simulator.js      Moteur de chiffrage et passage de relais vers le contact
 │   └── forms.js          Validation, résumé d'erreurs, états de soumission
 ├── images/               Photographies de chantier
@@ -85,7 +88,7 @@ pour un registre de maison plutôt que de site technique.
 
 ## Accessibilité
 
-Contrôles passés sur les cinq pages :
+Contrôles passés sur les six pages :
 
 - Contraste : tout le texte mesuré est entre 5,16:1 et 17,9:1 — le minimum AA
   (4,5:1) n'est jamais approché de trop près.
@@ -118,3 +121,33 @@ Le site est complet côté interface ; trois points relèvent d'un back-end :
 Le barème de l'estimation est centralisé en haut de `js/simulator.js`
 (`SYSTEMS`, `PREPARATIONS`, `FINISHES`, `DELAYS`, `MOBILISATION`) — c'est le seul
 endroit à modifier pour faire évoluer les prix.
+
+---
+
+## Les ateliers
+
+Les formats, les tarifs et les jours d'ouverture sont regroupés en haut de
+`js/booking.js` :
+
+```js
+var FORMATS = { initiation: { label, duree, prix, minPers, maxPers }, … };
+
+var CALENDRIER = {          // 0 = dimanche … 6 = samedi
+  3: ['18 h 30'],           // mercredi soir
+  5: ['14 h 00'],           // vendredi
+  6: ['10 h 00', '14 h 30'] // samedi
+};
+
+var SEMAINES_AFFICHEES = 5; // horizon proposé
+var DELAI_MINIMUM = 3;      // jours francs avant la première date
+```
+
+Les dates sont calculées à la volée depuis l'horloge du visiteur : il n'y a aucune
+date en dur à maintenir, et la liste ne se périme jamais.
+
+**Ce n'est pas un vrai système de réservation.** Le site étant statique, rien n'est
+enregistré et aucune place n'est décomptée : la page compose une *demande* de
+créneau que l'atelier confirme. Tant que le formulaire n'est pas relié à un
+back-end, deux personnes peuvent demander le même créneau. Pour une réservation
+ferme avec paiement, il faudra un service dédié (Calendly, SimplyBook, Ticket
+Tailor…) ou un petit back-end.
