@@ -1,0 +1,147 @@
+/* ===========================================================================
+   REZYN — Design Tokens
+   Architecture 3 couches : Primitive → Sémantique → Composant
+
+   Direction : maison de luxe. Ivoire, encre, bronze. Pas de bleu, pas de néon,
+   pas de dégradé sur le texte. Le luxe se joue sur l'espace, la typographie
+   et la finesse des filets — jamais sur l'effet.
+   =========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------------
+     1. PRIMITIVES — valeurs brutes, jamais utilisées directement en UI
+     --------------------------------------------------------------------- */
+
+  /* Ivoire — le papier de la maison */
+  --ivory-50: #fbf9f5;
+  --ivory-100: #f7f4ed;
+  --ivory-200: #f3efe7;
+  --ivory-300: #e9e3d7;
+  --ivory-400: #ddd5c5;
+
+  /* Encre — texte et salles sombres */
+  --ink-900: #14110d;
+  --ink-800: #1d1913;
+  --ink-700: #3a342c;
+  --ink-600: #4e4739;
+  --ink-500: #6b6357;
+  --ink-400: #8b8375;
+
+  /* Sur fond d'encre */
+  --sand-200: #c4bdb0;
+  --sand-300: #a79f92;
+
+  /* Bronze — l'unique métal, employé avec parcimonie */
+  --bronze-700: #5f4516;
+  --bronze-600: #7a5a22;
+  --bronze-500: #96723a;
+  --bronze-400: #b08f52;
+  --bronze-300: #c9a961;
+
+  /* États */
+  --rouge-700: #8f2f24;
+  --vert-700: #3c5f3a;
+
+  /* Rayons — le luxe est angulaire. Quasi aucun arrondi. */
+  --radius-none: 0;
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-full: 999px;
+
+  /* Espacement — amples, c'est le vide qui signale la valeur */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+  --space-10: 10rem;
+
+  /* Échelle typographique fluide */
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: clamp(1.02rem, 0.97rem + 0.24vw, 1.15rem);
+  --text-lg: clamp(1.35rem, 1.18rem + 0.8vw, 1.85rem);
+  --text-xl: clamp(1.75rem, 1.35rem + 1.9vw, 3rem);
+  --text-2xl: clamp(2.3rem, 1.5rem + 3.6vw, 4.6rem);
+  --text-3xl: clamp(2.6rem, 1.4rem + 4.4vw, 5.2rem);
+  --text-4xl: clamp(2.9rem, 1.3rem + 5.6vw, 6.4rem);
+
+  /* Familles — sérif haute finesse pour la voix, grotesque sobre pour le service */
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+
+  /* Mouvement — lent, sans rebond. Rien ne doit sembler pressé. */
+  --dur-fast: 240ms;
+  --dur-base: 420ms;
+  --dur-slow: 780ms;
+  --dur-scene: 1200ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---------------------------------------------------------------------
+     2. SÉMANTIQUES — le vocabulaire de l'interface
+     --------------------------------------------------------------------- */
+  --color-bg: var(--ivory-50);
+  --color-bg-alt: var(--ivory-200);
+  --color-surface: var(--ivory-100);
+
+  --color-fg: var(--ink-900);          /* 17.9:1 sur ivoire */
+  --color-fg-soft: var(--ink-700);     /* 11.7:1 */
+  --color-fg-muted: var(--ink-500);    /*  5.6:1 */
+
+  --color-rule: var(--ivory-300);      /* filets fins */
+  --color-rule-strong: var(--ivory-400);
+
+  --color-accent: var(--bronze-600);   /* 6.0:1 en texte sur ivoire */
+  --color-on-accent: var(--ivory-50);
+
+  --color-danger: var(--rouge-700);
+  --color-success: var(--vert-700);
+  --color-ring: var(--bronze-600);
+
+  /* Salles sombres : galeries et pieds de page */
+  --color-ink-bg: var(--ink-900);
+  --color-ink-fg: var(--ivory-50);
+  --color-ink-muted: var(--sand-300);  /* 7.2:1 sur encre */
+  --color-ink-rule: rgba(251, 249, 245, 0.14);
+  --color-ink-accent: var(--bronze-300); /* 8.4:1 sur encre */
+
+  /* Ombres — presque inexistantes, une maison n'a pas besoin de relief */
+  --elev-1: 0 1px 2px rgba(20, 17, 13, 0.04);
+  --elev-2: 0 18px 40px -28px rgba(20, 17, 13, 0.22);
+  --elev-3: 0 40px 80px -48px rgba(20, 17, 13, 0.3);
+
+  /* Mise en page */
+  --container: 1240px;
+  --container-narrow: 760px;
+  --container-wide: 1520px;
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --nav-h: 84px;
+
+  /* Échelle z-index explicite */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-nav: 100;
+  --z-overlay: 500;
+  --z-top: 1000;
+
+  /* ---------------------------------------------------------------------
+     3. COMPOSANTS
+     --------------------------------------------------------------------- */
+  --btn-height: 54px;
+  --btn-padding-x: 2.2rem;
+  --btn-radius: var(--radius-none);
+  --btn-tracking: 0.18em;
+
+  --field-height: 54px;
+  --field-radius: var(--radius-none);
+
+  --label-tracking: 0.3em;
+}

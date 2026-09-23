@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'estimation — Rezyn</title>
+<meta name="description" content="Estimez votre sol en résine ligne par ligne : matière, surface, état du support, finition et délai. Tarifs réels de nos devis.">
+<meta name="theme-color" content="#fbf9f5">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="L'estimation — Rezyn">
+<meta property="og:description" content="Estimez votre sol en résine ligne par ligne : matière, surface, état du support, finition et délai. Tarifs réels de nos devis.">
+<meta property="og:image" content="images/salle-bain-oceane.png">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314110d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23c9a961' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ====================================================== NAVIGATION -->
+<header class="nav" data-nav>
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="Rezyn — accueil">
+      Rezyn<small>Paris</small>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a class="nav__link" href="index.html">Accueil</a>
+      <a class="nav__link" href="finitions.html">Matières</a>
+      <a class="nav__link" href="realisations.html">Collection</a>
+      <a class="nav__link" href="simulateur.html" aria-current="page">Estimation</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--line" href="simulateur.html">Estimer</a>
+      <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Ouvrir le menu">
+        <i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav__drawer" id="nav-drawer" data-nav-drawer>
+  <a href="index.html">Accueil <span>01</span></a>
+  <a href="finitions.html">Matières <span>02</span></a>
+  <a href="realisations.html">Collection <span>03</span></a>
+  <a href="simulateur.html">Estimation <span>04</span></a>
+  <a href="contact.html">Contact <span>05</span></a>
+  <a class="btn btn--solid btn--block" href="simulateur.html">Estimer mon projet</a>
+</div>
+
+<main id="main">
+
+<!-- ==================================================== EN-TÊTE -->
+  <section class="page-head">
+    <div class="container">
+      <div class="page-head__inner" data-reveal>
+        <p class="label">En direct</p>
+        <h1 class="page-head__title">Votre <em>estimation</em></h1>
+      </div>
+      <p class="lead" data-reveal style="margin-top:2rem">
+        Ce calcul applique les tarifs réels de nos devis. Il ne remplace pas la visite
+        technique — l'état du support peut encore faire varier le montant — mais il
+        donne un ordre de grandeur honnête, sans zone d'ombre.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================= SIMULATEUR -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="studio" data-simulator>
+
+        <form class="studio__controls" novalidate>
+
+          <fieldset data-reveal>
+            <legend class="label" style="margin-bottom:1.4rem">i — La matière</legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="system" value="signature">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Signature</span>
+                  <span class="choice__meta">2 mm · teinte unie · 120 € / m²</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="system" value="metal" checked>
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Métal liquide</span>
+                  <span class="choice__meta">3 mm · veinage unique · 180 € / m²</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="system" value="prisme">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Prisme</span>
+                  <span class="choice__meta">4 à 6 mm · miroir ou 3D · 220 € / m²</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset data-reveal>
+            <legend class="label" style="margin-bottom:1.4rem">ii — La surface</legend>
+            <div class="control__head">
+              <h3 id="surface-label">Surface à couvrir</h3>
+              <output class="control__value" data-output="surface" for="surface">50 m²</output>
+            </div>
+            <input class="range" type="range" id="surface" name="surface"
+                   min="10" max="500" step="5" value="50"
+                   data-input="surface" aria-labelledby="surface-label">
+            <p class="control__scale"><span>10 m²</span><span>500 m²</span></p>
+            <p class="field__hint" style="margin-top:0.8rem">
+              Au-delà de 100 m², une remise de volume de 5 % s'applique&nbsp;;
+              10 % à partir de 250 m².
+            </p>
+          </fieldset>
+
+          <fieldset data-reveal>
+            <legend class="label" style="margin-bottom:1.4rem">iii — L'état du support</legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="prep" value="none">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Déjà prêt</span>
+                  <span class="choice__meta">Dalle saine et plane · inclus</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="prep" value="light" checked>
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Ponçage léger</span>
+                  <span class="choice__meta">Ouverture du support · +15 € / m²</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="prep" value="full">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Grenaillage complet</span>
+                  <span class="choice__meta">Dépose de peinture ou de colle · +30 € / m²</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="prep" value="heavy">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Reprise de dalle</span>
+                  <span class="choice__meta">Ragréage, fissures, points bas · +50 € / m²</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset data-reveal>
+            <legend class="label" style="margin-bottom:1.4rem">iv — La finition</legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="finish" value="standard" checked>
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Vernis satiné</span>
+                  <span class="choice__meta">Anti-UV · inclus</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="finish" value="grip">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Antidérapant R10</span>
+                  <span class="choice__meta">Quartz calibré · +20 € / m²</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="finish" value="mirror">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Brillance miroir</span>
+                  <span class="choice__meta">Double vernis poli · +35 € / m²</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="finish" value="depth">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Effet 3D métallisé</span>
+                  <span class="choice__meta">Couche de profondeur · +45 € / m²</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset data-reveal>
+            <legend class="label" style="margin-bottom:1.4rem">v — Le délai</legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="delay" value="planned" checked>
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Planning d'atelier</span>
+                  <span class="choice__meta">Sous 4 à 6 semaines · inclus</span>
+                </span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="delay" value="express">
+                <span class="choice__mark" aria-hidden="true"></span>
+                <span class="choice__body">
+                  <span class="choice__name">Intervention express</span>
+                  <span class="choice__meta">Démarrage sous 10 jours · +12 %</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+        </form>
+
+        <aside class="estimate" aria-live="polite" aria-atomic="true">
+          <div>
+            <p class="label">Estimation</p>
+            <p class="estimate__total" data-output="total">0 €</p>
+            <p class="estimate__range" data-output="range"></p>
+          </div>
+
+          <dl class="estimate__lines" data-output="lines"></dl>
+
+          <dl style="display:grid;gap:0.6rem">
+            <div class="estimate__line"><dt>Coût moyen au m²</dt><dd data-output="perm2"></dd></div>
+            <div class="estimate__line"><dt>Durée de chantier</dt><dd data-output="duration"></dd></div>
+          </dl>
+
+          <ul class="estimate__perks">
+            <li>Visite technique et devis offerts</li>
+            <li>Échantillon coulé avant signature</li>
+            <li>Garantie décennale incluse</li>
+          </ul>
+
+          <a class="btn btn--solid btn--block" href="contact.html" data-quote-send>Envoyer cette estimation</a>
+
+          <p class="field__hint">
+            Montants TTC indicatifs, TVA 10 % applicable en rénovation de plus de deux ans.
+            Le devis définitif est établi après relevé sur site.
+          </p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== CE QUI VARIE -->
+  <section class="section section--tight" id="variables">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="label">Transparence</p>
+        <h2>Ce qui peut encore faire bouger le prix</h2>
+        <p>Aucun calcul ne voit votre dalle. Voici ce que nous vérifions sur place.</p>
+      </header>
+
+      <dl class="specs" data-reveal>
+        <div class="spec">
+          <dt>Hygrométrie</dt>
+          <dd>+ 12 à 18 € / m²<small>Au-delà de 4 % d'humidité résiduelle, un primaire barrière-vapeur devient obligatoire. C'est la seule protection contre un décollement à deux ans.</small></dd>
+        </div>
+        <div class="spec">
+          <dt>Découpes</dt>
+          <dd>+ 6 à 10 %<small>Remontées en plinthe, seuils de porte, contours d'îlot : facturés au mètre linéaire. Sur une pièce très découpée, la part est sensible.</small></dd>
+        </div>
+        <div class="spec">
+          <dt>Accès</dt>
+          <dd>Sur devis<small>Étage sans ascenseur, stationnement impossible, horaires contraints : le poste logistique est chiffré à part pour que vous puissiez arbitrer.</small></dd>
+        </div>
+        <div class="spec">
+          <dt>Dépose</dt>
+          <dd>Après sondage<small>Carrelage creux, parquet collé, ancienne peinture de sol : si le test d'arrachement échoue, la dépose est chiffrée — jamais estimée à l'aveugle.</small></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================================================== INVITE -->
+  <section class="section on-ink">
+    <div class="container">
+      <div class="invite" data-reveal>
+        <p class="label">La suite</p>
+        <h2>Transformons cette estimation en <em>devis ferme</em></h2>
+        <p>
+          La visite technique dure quarante minutes et n'engage à rien. Vous repartez
+          avec un chiffrage définitif et une date de coulée.
+        </p>
+        <div class="invite__actions">
+          <a class="btn btn--solid" href="contact.html" data-quote-send>Réserver la visite</a>
+          <a class="btn btn--line" href="tel:+33123456789">01 23 45 67 89</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================= FOOTER -->
+<footer class="footer on-ink">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <p class="footer__sign">Rezyn</p>
+        <p style="color:var(--color-ink-muted);font-size:var(--text-sm);max-width:30ch;line-height:1.8">
+          Maison de sols coulés en résine époxy. Étude, préparation, coulée
+          et garantie décennale.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__title">Maison</p>
+        <ul class="footer__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="finitions.html">Matières</a></li>
+          <li><a href="realisations.html">Collection</a></li>
+          <li><a href="simulateur.html">Estimation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Matières</p>
+        <ul class="footer__list">
+          <li><a href="finitions.html#signature">Signature</a></li>
+          <li><a href="finitions.html#metal">Métal liquide</a></li>
+          <li><a href="finitions.html#prisme">Prisme</a></li>
+          <li><a href="finitions.html#industriel">Sols techniques</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Atelier</p>
+        <ul class="footer__list">
+          <li><a href="tel:+33123456789">01 23 45 67 89</a></li>
+          <li><a href="mailto:contact@rezyn.fr">contact@rezyn.fr</a></li>
+          <li><span>Paris &amp; Île-de-France</span></li>
+          <li><span>Lun – Ven · 9 h – 18 h</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Rezyn</p>
+      <p>Sols en résine époxy · Paris</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/core.js" defer></script>
+<script src="js/simulator.js" defer></script>
+</body>
+</html>

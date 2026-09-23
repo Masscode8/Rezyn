@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La collection — Rezyn</title>
+<meta name="description" content="Garages, intérieurs, pièces d'eau, plateaux tertiaires : les sols en résine coulés par la maison Rezyn, pièce par pièce.">
+<meta name="theme-color" content="#fbf9f5">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="La collection — Rezyn">
+<meta property="og:description" content="Garages, intérieurs, pièces d'eau, plateaux tertiaires : les sols en résine coulés par la maison Rezyn, pièce par pièce.">
+<meta property="og:image" content="images/garage-emeraude.png">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314110d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23c9a961' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ====================================================== NAVIGATION -->
+<header class="nav" data-nav>
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="Rezyn — accueil">
+      Rezyn<small>Paris</small>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a class="nav__link" href="index.html">Accueil</a>
+      <a class="nav__link" href="finitions.html">Matières</a>
+      <a class="nav__link" href="realisations.html" aria-current="page">Collection</a>
+      <a class="nav__link" href="simulateur.html">Estimation</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--line" href="simulateur.html">Estimer</a>
+      <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Ouvrir le menu">
+        <i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav__drawer" id="nav-drawer" data-nav-drawer>
+  <a href="index.html">Accueil <span>01</span></a>
+  <a href="finitions.html">Matières <span>02</span></a>
+  <a href="realisations.html">Collection <span>03</span></a>
+  <a href="simulateur.html">Estimation <span>04</span></a>
+  <a href="contact.html">Contact <span>05</span></a>
+  <a class="btn btn--solid btn--block" href="simulateur.html">Estimer mon projet</a>
+</div>
+
+<main id="main">
+
+<!-- ==================================================== EN-TÊTE -->
+  <section class="page-head">
+    <div class="container container--wide">
+      <div class="page-head__inner" data-reveal>
+        <p class="label">Chantiers livrés</p>
+        <h1 class="page-head__title">La <em>collection</em></h1>
+      </div>
+      <p class="lead" data-reveal style="margin-top:2rem">
+        Des sols photographiés après réception, sans retouche du veinage.
+        Filtrez par usage pour voir comment la matière se comporte dans une
+        pièce comparable à la vôtre.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================== GALERIE -->
+  <section class="section section--tight">
+    <div class="container container--wide">
+
+      <div class="filters" data-reveal role="group" aria-label="Filtrer par usage">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Tout</button>
+        <button class="filter" type="button" data-filter="garage" aria-pressed="false">Garages</button>
+        <button class="filter" type="button" data-filter="habitat" aria-pressed="false">Intérieurs</button>
+        <button class="filter" type="button" data-filter="eau" aria-pressed="false">Pièces d'eau</button>
+        <button class="filter" type="button" data-filter="pro" aria-pressed="false">Tertiaire</button>
+      </div>
+
+      <p class="visually-hidden" role="status" aria-live="polite" data-gallery-count></p>
+
+      <div class="collection" data-gallery style="margin-top:3rem">
+
+        <button class="piece" type="button" data-category="garage"
+                data-title="Bleu Nuit"
+                data-spec="Métal liquide RZ—B12 · 62 m² · Rueil-Malmaison · 2025">
+          <span class="piece__frame" data-veil>
+            <img src="images/garage-bleu-or.png" width="1024" height="1024" loading="lazy" decoding="async"
+                 alt="Garage résidentiel au sol en résine bleu nuit veiné d'or, reflétant un pick-up sombre.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Bleu Nuit</span>
+            <span class="piece__spec">Métal liquide · 62 m² · Rueil-Malmaison</span>
+          </span>
+        </button>
+
+        <button class="piece" type="button" data-category="eau"
+                data-title="Océane"
+                data-spec="Prisme R11 · 18 m² · Neuilly-sur-Seine · 2025">
+          <span class="piece__frame" data-veil>
+            <img src="images/salle-bain-oceane.png" width="1024" height="1024" loading="lazy" decoding="async"
+                 alt="Salle de bain contemporaine au sol en résine bleu océan veiné d'or et de blanc, sous une baignoire îlot.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Océane</span>
+            <span class="piece__spec">Prisme · 18 m² · Neuilly-sur-Seine</span>
+          </span>
+        </button>
+
+        <button class="piece" type="button" data-category="garage"
+                data-title="Ambre Bronze"
+                data-spec="Métal liquide RZ—M09 · 48 m² · Versailles · 2024">
+          <span class="piece__frame" data-veil>
+            <img src="images/garage-ambre.png" width="1024" height="1024" loading="lazy" decoding="async"
+                 alt="Garage au sol en résine ambre et bronze très brillante, abritant une voiture de sport verte.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Ambre Bronze</span>
+            <span class="piece__spec">Métal liquide · 48 m² · Versailles</span>
+          </span>
+        </button>
+
+        <button class="piece piece--wide" type="button" data-category="habitat"
+                data-title="Cuivre Fondu"
+                data-spec="Métal liquide RZ—C07 · 95 m² · Boulogne-Billancourt · 2025">
+          <span class="piece__frame" data-veil>
+            <img src="images/salon-cuivre.jpg" width="800" height="800" loading="lazy" decoding="async"
+                 alt="Séjour au sol en résine noire veinée de cuivre, surface miroir reflétant les baies vitrées.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Cuivre Fondu</span>
+            <span class="piece__spec">Métal liquide · 95 m² · Boulogne-Billancourt</span>
+          </span>
+        </button>
+
+        <button class="piece" type="button" data-category="garage"
+                data-title="Perle Émeraude"
+                data-spec="Métal liquide RZ—E05 · 74 m² · Saint-Cloud · 2024">
+          <span class="piece__frame" data-veil>
+            <img src="images/garage-emeraude.png" width="1024" height="1024" loading="lazy" decoding="async"
+                 alt="Garage de collection au sol en résine gris perle veiné d'émeraude, avec une voiture de sport rouge.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Perle Émeraude</span>
+            <span class="piece__spec">Métal liquide · 74 m² · Saint-Cloud</span>
+          </span>
+        </button>
+
+        <button class="piece" type="button" data-category="pro"
+                data-title="Argent Poli"
+                data-spec="Signature RZ—A03 · 340 m² · Issy-les-Moulineaux · 2024">
+          <span class="piece__frame" data-veil>
+            <img src="images/showroom-argent.jpeg" width="960" height="640" loading="lazy" decoding="async"
+                 alt="Grand plateau de bureaux au sol en résine argent métallisé, continu sur toute la surface.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Argent Poli</span>
+            <span class="piece__spec">Signature · 340 m² · Issy-les-Moulineaux</span>
+          </span>
+        </button>
+
+        <button class="piece piece--wide" type="button" data-category="habitat"
+                data-title="Quatre ambiances"
+                data-spec="Panorama d'atelier · garage, pièces d'eau, sanitaires · 2024 – 2025">
+          <span class="piece__frame" data-veil>
+            <img src="images/composition-projets.png" width="1024" height="1024" loading="lazy" decoding="async"
+                 alt="Composition de quatre chantiers : garage gris veiné de bleu, deux salles de bain à sol océan, un sanitaire à motif géométrique.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Quatre ambiances</span>
+            <span class="piece__spec">Panorama d'atelier · 2024 – 2025</span>
+          </span>
+        </button>
+
+        <button class="piece" type="button" data-category="eau"
+                data-title="Océane · détail"
+                data-spec="Prisme · détail du raccord douche · Neuilly-sur-Seine">
+          <span class="piece__frame" data-veil>
+            <img src="images/salle-bain-oceane.png" width="1024" height="1024" loading="lazy" decoding="async"
+                 alt="Gros plan sur le veinage doré et blanc d'un sol de salle de bain en résine bleu océan.">
+          </span>
+          <span class="piece__caption">
+            <span class="piece__name">Océane · détail</span>
+            <span class="piece__spec">Prisme · raccord douche</span>
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================= VISIONNEUSE -->
+  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="Visionneuse" aria-hidden="true">
+    <div class="lightbox__frame">
+      <button class="lightbox__close" type="button" data-lb-close aria-label="Fermer la visionneuse">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Pièce précédente">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Pièce suivante">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
+      <img class="lightbox__img" src="" alt="">
+
+      <p class="lightbox__caption">
+        <span>
+          <strong data-lb-title></strong>
+          <span data-lb-spec></span>
+        </span>
+        <span data-lb-counter></span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ================================================ AVANT/APRÈS -->
+  <section class="section on-ink" id="transformation">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="label">La transformation</p>
+        <h2>Avec et sans résine</h2>
+        <p>
+          Faites glisser le curseur pour révéler le sol fini. Au clavier&nbsp;: flèches
+          gauche et droite. La partie gauche est une simulation désaturée du support nu.
+        </p>
+      </header>
+
+      <div class="compare" data-compare data-reveal>
+        <img class="compare__after" src="images/showroom-argent.jpeg" width="960" height="600" loading="lazy" decoding="async"
+             alt="Après : plateau de bureaux recouvert d'une résine métallisée argent, surface miroir continue.">
+        <img class="compare__before" src="images/showroom-argent.jpeg" width="960" height="600" loading="lazy" decoding="async"
+             alt="Simulation désaturée du même plateau avant résine, rendant l'aspect d'une dalle de béton brute.">
+        <span class="compare__label compare__label--l">Avant</span>
+        <span class="compare__label compare__label--r">Après</span>
+        <input class="compare__range" type="range" min="0" max="100" value="50" step="1"
+               aria-label="Révéler le sol fini" title="Révéler le sol fini">
+        <span class="compare__handle" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== CHIFFRES -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="figures" data-reveal>
+        <div class="figure">
+          <span class="figure__value" data-count="520">520</span>
+          <span class="figure__label">Chantiers livrés</span>
+        </div>
+        <div class="figure">
+          <span class="figure__value" data-count="41000" data-suffix=" m²">41 000 m²</span>
+          <span class="figure__label">Résine coulée</span>
+        </div>
+        <div class="figure">
+          <span class="figure__value" data-count="4.9" data-suffix=" / 5">4,9 / 5</span>
+          <span class="figure__label">Note clients vérifiée</span>
+        </div>
+        <div class="figure">
+          <span class="figure__value" data-count="16" data-suffix=" ans">16 ans</span>
+          <span class="figure__label">D'atelier</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================ TÉMOIGNAGES -->
+  <section class="section section--tight" id="temoignages">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="label">Retours de chantier</p>
+        <h2>Ce qu'en disent les maîtres d'ouvrage</h2>
+      </header>
+
+      <div class="voices">
+        <figure class="voice" data-reveal>
+          <blockquote>
+            « L'échantillon signé avant chantier a tout changé. Nous savions exactement
+            ce que nous allions recevoir, et c'est exactement ce que nous avons reçu. »
+          </blockquote>
+          <figcaption><b>C. Mercier</b> Villa privée · 190 m²</figcaption>
+        </figure>
+
+        <figure class="voice" data-reveal>
+          <blockquote>
+            « 340 m² coulés en deux jours sur un plateau occupé. Aucune reprise,
+            aucun raccord visible, planning tenu à la demi-journée près. »
+          </blockquote>
+          <figcaption><b>S. Delaunay</b> Directrice travaux · Bureaux</figcaption>
+        </figure>
+
+        <figure class="voice" data-reveal>
+          <blockquote>
+            « Trois ans de garage, des pneus chauds et des chutes d'outils&nbsp;:
+            la surface n'a pas bougé. C'était mon seul critère. »
+          </blockquote>
+          <figcaption><b>R. Bassot</b> Garage collection · 74 m²</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== INVITE -->
+  <section class="section on-ink">
+    <div class="container">
+      <div class="invite" data-reveal>
+        <p class="label">Votre chantier</p>
+        <h2>Le prochain veinage sera le <em>vôtre</em></h2>
+        <p>
+          Envoyez deux photos de votre sol actuel et sa surface approximative.
+          Nous revenons sous 24 heures ouvrées avec une estimation et une date de visite.
+        </p>
+        <div class="invite__actions">
+          <a class="btn btn--solid" href="contact.html">Demander une visite</a>
+          <a class="btn btn--line" href="simulateur.html">Estimer d'abord le budget</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================= FOOTER -->
+<footer class="footer on-ink">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <p class="footer__sign">Rezyn</p>
+        <p style="color:var(--color-ink-muted);font-size:var(--text-sm);max-width:30ch;line-height:1.8">
+          Maison de sols coulés en résine époxy. Étude, préparation, coulée
+          et garantie décennale.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__title">Maison</p>
+        <ul class="footer__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="finitions.html">Matières</a></li>
+          <li><a href="realisations.html">Collection</a></li>
+          <li><a href="simulateur.html">Estimation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Matières</p>
+        <ul class="footer__list">
+          <li><a href="finitions.html#signature">Signature</a></li>
+          <li><a href="finitions.html#metal">Métal liquide</a></li>
+          <li><a href="finitions.html#prisme">Prisme</a></li>
+          <li><a href="finitions.html#industriel">Sols techniques</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Atelier</p>
+        <ul class="footer__list">
+          <li><a href="tel:+33123456789">01 23 45 67 89</a></li>
+          <li><a href="mailto:contact@rezyn.fr">contact@rezyn.fr</a></li>
+          <li><span>Paris &amp; Île-de-France</span></li>
+          <li><span>Lun – Ven · 9 h – 18 h</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Rezyn</p>
+      <p>Sols en résine époxy · Paris</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/core.js" defer></script>
+<script src="js/gallery.js" defer></script>
+</body>
+</html>

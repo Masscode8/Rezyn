@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact — Rezyn</title>
+<meta name="description" content="Visite technique offerte, échantillon coulé à vos pigments, devis détaillé sous 24 heures ouvrées. Écrivez à l'atelier Rezyn.">
+<meta name="theme-color" content="#fbf9f5">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Rezyn">
+<meta property="og:description" content="Visite technique offerte, échantillon coulé à vos pigments, devis détaillé sous 24 heures ouvrées. Écrivez à l'atelier Rezyn.">
+<meta property="og:image" content="images/salon-cuivre.jpg">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314110d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23c9a961' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ====================================================== NAVIGATION -->
+<header class="nav" data-nav>
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="Rezyn — accueil">
+      Rezyn<small>Paris</small>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a class="nav__link" href="index.html">Accueil</a>
+      <a class="nav__link" href="finitions.html">Matières</a>
+      <a class="nav__link" href="realisations.html">Collection</a>
+      <a class="nav__link" href="simulateur.html">Estimation</a>
+      <a class="nav__link" href="contact.html" aria-current="page">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--line" href="simulateur.html">Estimer</a>
+      <button class="nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Ouvrir le menu">
+        <i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav__drawer" id="nav-drawer" data-nav-drawer>
+  <a href="index.html">Accueil <span>01</span></a>
+  <a href="finitions.html">Matières <span>02</span></a>
+  <a href="realisations.html">Collection <span>03</span></a>
+  <a href="simulateur.html">Estimation <span>04</span></a>
+  <a href="contact.html">Contact <span>05</span></a>
+  <a class="btn btn--solid btn--block" href="simulateur.html">Estimer mon projet</a>
+</div>
+
+<main id="main">
+
+<!-- ==================================================== EN-TÊTE -->
+  <section class="page-head">
+    <div class="container">
+      <div class="page-head__inner" data-reveal>
+        <p class="label">L'atelier</p>
+        <h1 class="page-head__title">Parlons de votre <em>sol</em></h1>
+      </div>
+      <p class="lead" data-reveal style="margin-top:2rem">
+        Décrivez votre projet en quelques lignes. Nous répondons sous 24 heures
+        ouvrées avec une première estimation, et nous proposons une date de visite
+        technique dans la foulée.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================== CONTACT -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="contact">
+
+        <div data-reveal>
+          <dl class="specs">
+            <div class="spec contact__row">
+              <dt>Téléphone</dt>
+              <dd><a href="tel:+33123456789">01 23 45 67 89</a><small>Lundi – vendredi, 9 h – 18 h</small></dd>
+            </div>
+
+            <div class="spec contact__row">
+              <dt>E-mail</dt>
+              <dd><a href="mailto:contact@rezyn.fr">contact@rezyn.fr</a><small>Réponse sous 24 heures ouvrées</small></dd>
+            </div>
+
+            <div class="spec contact__row">
+              <dt>Atelier</dt>
+              <dd>Paris &amp; Île-de-France<small>Visite d'échantillons sur rendez-vous</small></dd>
+            </div>
+
+            <div class="spec contact__row">
+              <dt>Déplacements</dt>
+              <dd>France entière<small>À partir de 150 m². Frais chiffrés séparément.</small></dd>
+            </div>
+          </dl>
+
+          <p class="lead" style="margin-top:2.5rem;font-size:var(--text-sm)">
+            Joignez deux photos de votre sol actuel et sa surface approximative&nbsp;:
+            dans la plupart des cas, cela nous suffit pour chiffrer avant même de
+            nous déplacer.
+          </p>
+        </div>
+
+        <form class="form" data-form novalidate data-reveal>
+
+          <div class="error-summary" data-error-summary role="alert">
+            <h3>Votre demande n'a pas pu être envoyée</h3>
+            <ul></ul>
+          </div>
+
+          <div class="form-status" data-form-status role="status" tabindex="-1"></div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="firstname">Prénom <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="firstname" name="firstname" autocomplete="given-name" required>
+              <p class="field__error" id="firstname-error"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="lastname">Nom <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="lastname" name="lastname" autocomplete="family-name" required>
+              <p class="field__error" id="lastname-error"></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="email" id="email" name="email" autocomplete="email" inputmode="email" required>
+              <p class="field__error" id="email-error"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone">Téléphone</label>
+              <input class="input" type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+().\s-]{6,20}">
+              <p class="field__hint">Pour le rappel technique, si vous le souhaitez.</p>
+              <p class="field__error" id="phone-error"></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="usage">Type de pièce <span class="req" aria-hidden="true">*</span></label>
+              <select class="select" id="usage" name="usage" required>
+                <option value="">Choisissez…</option>
+                <option value="garage">Garage ou atelier privé</option>
+                <option value="habitat">Séjour, chambre, couloir</option>
+                <option value="eau">Salle de bain, buanderie</option>
+                <option value="pro">Local professionnel, bureaux</option>
+                <option value="industriel">Site industriel</option>
+                <option value="autre">Autre</option>
+              </select>
+              <p class="field__error" id="usage-error"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="area">Surface approximative</label>
+              <input class="input" type="number" id="area" name="area" min="1" max="5000" step="1" inputmode="numeric" placeholder="45">
+              <p class="field__hint">En mètres carrés, même approximative.</p>
+              <p class="field__error" id="area-error"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="message">Votre projet <span class="req" aria-hidden="true">*</span></label>
+            <textarea class="textarea" id="message" name="message" required minlength="20"
+                      data-estimate-target
+                      placeholder="État actuel du sol, rendu souhaité, contraintes de délai…"></textarea>
+            <p class="field__hint" data-estimate-note hidden>
+              Votre estimation a été reprise ci-dessus. Complétez-la librement.
+            </p>
+            <p class="field__error" id="message-error"></p>
+          </div>
+
+          <div class="form__foot">
+            <p class="form__legal">
+              Vos données servent uniquement à traiter cette demande.
+              Aucune transmission à un tiers.
+            </p>
+            <button class="btn btn--solid" type="submit">Envoyer ma demande</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== FAQ -->
+  <section class="section section--tight" id="faq">
+    <div class="container container--narrow">
+      <header class="section-head" data-reveal>
+        <p class="label">Avant d'écrire</p>
+        <h2>Les trois questions qu'on nous pose en premier</h2>
+      </header>
+
+      <div class="faq" data-reveal>
+        <div class="faq__item">
+          <h3>
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="cfaq-1" id="cfaq-btn-1">
+              La visite technique est-elle vraiment offerte&nbsp;?
+              <i aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="faq__a" id="cfaq-1" role="region" aria-labelledby="cfaq-btn-1">
+            <div><p>
+              Oui, en Île-de-France et sans condition de signature. Elle comprend le
+              relevé de surface, le test d'hygrométrie et le sondage du support.
+              Au-delà de la région, elle est offerte à partir de 150 m².
+            </p></div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <h3>
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="cfaq-2" id="cfaq-btn-2">
+              Puis-je voir des échantillons avant de m'engager&nbsp;?
+              <i aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="faq__a" id="cfaq-2" role="region" aria-labelledby="cfaq-btn-2">
+            <div><p>
+              L'atelier conserve les plaques de tous les chantiers livrés. Vous pouvez
+              venir les voir sur rendez-vous, ou nous vous coulons un échantillon de
+              50 × 50 cm avec vos pigments — offert dès la signature du devis.
+            </p></div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <h3>
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="cfaq-3" id="cfaq-btn-3">
+              Quel délai entre le devis et la coulée&nbsp;?
+              <i aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="faq__a" id="cfaq-3" role="region" aria-labelledby="cfaq-btn-3">
+            <div><p>
+              Quatre à six semaines en planning d'atelier, le temps de valider
+              l'échantillon et de réserver l'équipe. L'option express ramène ce délai
+              à dix jours, moyennant 12 % du montant.
+            </p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================= FOOTER -->
+<footer class="footer on-ink">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <p class="footer__sign">Rezyn</p>
+        <p style="color:var(--color-ink-muted);font-size:var(--text-sm);max-width:30ch;line-height:1.8">
+          Maison de sols coulés en résine époxy. Étude, préparation, coulée
+          et garantie décennale.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__title">Maison</p>
+        <ul class="footer__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="finitions.html">Matières</a></li>
+          <li><a href="realisations.html">Collection</a></li>
+          <li><a href="simulateur.html">Estimation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Matières</p>
+        <ul class="footer__list">
+          <li><a href="finitions.html#signature">Signature</a></li>
+          <li><a href="finitions.html#metal">Métal liquide</a></li>
+          <li><a href="finitions.html#prisme">Prisme</a></li>
+          <li><a href="finitions.html#industriel">Sols techniques</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Atelier</p>
+        <ul class="footer__list">
+          <li><a href="tel:+33123456789">01 23 45 67 89</a></li>
+          <li><a href="mailto:contact@rezyn.fr">contact@rezyn.fr</a></li>
+          <li><span>Paris &amp; Île-de-France</span></li>
+          <li><span>Lun – Ven · 9 h – 18 h</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Rezyn</p>
+      <p>Sols en résine époxy · Paris</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/core.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script src="js/simulator.js" defer></script>
+</body>
+</html>
