@@ -36,6 +36,43 @@ body.is-locked {
   overflow: hidden;
 }
 
+/* ---------------------------------------------------------------------------
+   L'atmosphère du papier
+   Deux voiles fixes derrière tout le contenu : de larges lavis chauds pour que
+   la page ne soit jamais une dalle plate, et un grain très fin qui lui donne
+   la matité d'un papier de qualité plutôt que la brillance d'un écran.
+   --------------------------------------------------------------------------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-base);
+  pointer-events: none;
+  background:
+    radial-gradient(54% 40% at 10% 2%, rgba(176, 143, 82, 0.2), transparent 62%),
+    radial-gradient(46% 34% at 94% 14%, rgba(150, 114, 58, 0.14), transparent 64%),
+    radial-gradient(64% 44% at 46% 104%, rgba(20, 17, 13, 0.08), transparent 66%);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-base);
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)' opacity='0.22'/%3E%3C/svg%3E");
+}
+
+/* Le contenu passe devant les voiles */
+header,
+main,
+footer {
+  position: relative;
+  z-index: var(--z-raised);
+}
+
 /* Typographie ------------------------------------------------------------- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
@@ -141,8 +178,29 @@ output { display: inline-block; }
 
 .section--tight { padding-block: clamp(3.5rem, 7vw, 7rem); }
 
-/* Salle sombre : galerie, pied de page */
+/* Bande de papier plus soutenu : rompt les longues pages claires sans
+   basculer en salle sombre. */
+.section--paper {
+  background: var(--ivory-100);
+}
+
+.section--paper [data-veil]::after { background: var(--ivory-100); }
+
+/* Salle sombre : galerie, pied de page.
+
+   Plutôt que de redéfinir chaque composant un par un — et d'en oublier —
+   on redéfinit ici les jetons sémantiques. Tout ce qui se trouve dans la
+   salle bascule automatiquement : textes, filets, accents, panneaux. */
 .on-ink {
+  --color-fg: var(--color-ink-fg);
+  --color-fg-soft: var(--sand-200);
+  --color-fg-muted: var(--color-ink-muted);
+  --color-accent: var(--color-ink-accent);
+  --color-rule: var(--color-ink-rule);
+  --color-rule-strong: rgba(251, 249, 245, 0.3);
+  --color-bg-alt: var(--ink-800);
+  --color-ring: var(--color-ink-accent);
+
   background: var(--color-ink-bg);
   color: var(--color-ink-fg);
 }

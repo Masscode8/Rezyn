@@ -12,12 +12,14 @@
      1. PRIMITIVES — valeurs brutes, jamais utilisées directement en UI
      --------------------------------------------------------------------- */
 
-  /* Ivoire — le papier de la maison */
-  --ivory-50: #fbf9f5;
-  --ivory-100: #f7f4ed;
-  --ivory-200: #f3efe7;
-  --ivory-300: #e9e3d7;
-  --ivory-400: #ddd5c5;
+  /* Ivoire — le papier de la maison.
+     Un vrai papier n'est jamais blanc : la base est un os chaud à 86 % de
+     clarté, pas un blanc d'écran à 95 %. Le texte y gagne même en contraste. */
+  --ivory-50: #f3eee2;   /* la page */
+  --ivory-100: #eee8da;  /* bandes de respiration */
+  --ivory-200: #ebe4d3;  /* panneaux */
+  --ivory-300: #e0d8c6;  /* filets */
+  --ivory-400: #d3c9b2;  /* filets appuyés */
 
   /* Encre — texte et salles sombres */
   --ink-900: #14110d;

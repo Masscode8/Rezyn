@@ -68,9 +68,16 @@ La palette et la typographie viennent de la skill `ui-ux-pro-max`
 (`design-system/rezyn/MASTER.md`, profil « premium + accent or »), retravaillées
 pour un registre de maison plutôt que de site technique.
 
-- **Palette** — ivoire `#fbf9f5` (le papier), encre `#14110d` (le texte et les
+- **Palette** — os chaud `#f3eee2` (le papier), encre `#14110d` (le texte et les
   salles sombres), bronze `#7a5a22` (l'unique métal, employé avec parcimonie).
-  Aucun bleu, aucun néon, aucun dégradé sur le texte.
+  Aucun bleu, aucun néon, aucun dégradé sur le texte. Le fond n'est volontairement
+  pas un blanc d'écran : à 86 % de clarté au lieu de 95 %, il ne tape pas dans
+  l'œil sur les longues pages — et le texte y gagne même en contraste.
+- **L'atmosphère** — deux voiles fixes derrière le contenu : de larges lavis
+  chauds pour que la page ne soit jamais une dalle plate, et un grain très fin
+  qui lui donne la matité d'un papier plutôt que la brillance d'un écran.
+  La classe `.section--paper` pose en plus une bande plus soutenue par page,
+  pour rompre les longues étendues claires sans basculer en salle sombre.
 - **Typographie** — Cormorant Garamond en graisse 300–400 pour la voix,
   Montserrat en petites capitales espacées (0.3 em) pour le service. Les surtitres
   sont en gris encre ou en bronze, jamais en couleur vive.
@@ -81,17 +88,21 @@ pour un registre de maison plutôt que de site technique.
 - **Mouvement** — lent et sans rebond : fondus de 1 200 ms, voiles d'image qui se
   retirent, recadrage du visuel d'accueil sur 26 secondes. Rien ne doit sembler pressé.
 - **Salles sombres** — `.on-ink` bascule une section entière en encre (les matières,
-  la transformation, les invitations, le pied de page). Les photographies de sol y
-  ressortent comme dans une galerie.
+  les formats d'atelier, la transformation, les invitations, le pied de page).
+  Les photographies de sol y ressortent comme dans une galerie. La classe ne
+  repeint pas les composants un par un : elle **redéfinit les jetons sémantiques**
+  (`--color-fg`, `--color-accent`, `--color-rule`…), si bien que tout ce qui entre
+  dans la salle bascule automatiquement, y compris les composants ajoutés plus tard.
 
 ---
 
 ## Accessibilité
 
-Contrôles passés sur les six pages :
+Contrôles passés sur les six pages, en balayant chaque élément textuel :
 
-- Contraste : tout le texte mesuré est entre 5,16:1 et 17,9:1 — le minimum AA
-  (4,5:1) n'est jamais approché de trop près.
+- Contraste : zéro élément sous le seuil AA sur l'ensemble des six pages, fonds
+  clairs et salles sombres confondus. Le balayage compare la couleur de chaque
+  texte au fond effectivement peint derrière lui, avec le seuil adapté à sa taille.
 - Anneaux de focus visibles partout, jamais supprimés ; lien d'évitement en tête.
 - Cibles tactiles ≥ 44 px, à l'exception d'un numéro de téléphone inline dans une
   phrase, cas explicitement exempté par WCAG 2.2.
