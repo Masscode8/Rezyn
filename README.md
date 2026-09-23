@@ -60,6 +60,30 @@ claude_rezyn/
 Aucune dépendance, aucun framework. Seules ressources externes : les polices Google
 (Cormorant Garamond, Montserrat).
 
+### Mettre à jour sans se battre avec le cache
+
+GitHub Pages sert les feuilles de style avec `cache-control: max-age=600`, et les
+navigateurs les gardent souvent bien plus longtemps. Après une mise en ligne, on
+peut donc voir l'ancien rendu pendant un moment — et croire à un bug déjà corrigé.
+
+Les adresses des ressources portent pour cette raison une estampille de version :
+
+```html
+<link rel="stylesheet" href="css/tokens.css?v=20260923.1">
+<script src="js/core.js?v=20260923.1" defer></script>
+```
+
+**Après chaque modification d'un fichier `css/` ou `js/`, incrémentez l'estampille
+dans les six pages** avant de pousser. En une commande depuis le dossier du site :
+
+```bash
+python -c "import io,glob,re,datetime; s=datetime.date.today().strftime('%Y%m%d')+'.1'; [io.open(f,'w',encoding='utf-8',newline='
+').write(re.sub(r'(href="css/[a-z-]+\.css|src="js/[a-z-]+\.js)(\?v=[0-9.]+)?"', r'?v='+s+'"', io.open(f,encoding='utf-8').read())) for f in glob.glob('*.html')]; print('estampille',s)"
+```
+
+Le navigateur voit alors une nouvelle adresse et récupère le fichier immédiatement.
+Si vous poussez deux fois le même jour, passez le `.1` à `.2`.
+
 ---
 
 ## Direction artistique — maison de luxe

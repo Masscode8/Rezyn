@@ -79,12 +79,14 @@
 
 .hero__title .line > span {
   display: block;
-  transform: translateY(104%);
-  animation: lineUp var(--dur-scene) var(--ease-out) forwards;
+  /* L'état AU REPOS est l'état lisible : on anime depuis le bas, on n'y part
+     pas. Si l'animation ne démarre jamais — moteur bridé, onglet en arrière-
+     plan, préférence système — le titre reste visible au lieu d'être rogné. */
+  animation: lineUp var(--dur-scene) var(--ease-out) backwards;
   animation-delay: var(--line-delay, 0ms);
 }
 
-@keyframes lineUp { to { transform: none; } }
+@keyframes lineUp { from { transform: translateY(104%); } }
 
 @media (prefers-reduced-motion: reduce) {
   .hero__title .line > span { transform: none; animation: none; }
