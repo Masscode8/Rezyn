@@ -210,9 +210,10 @@ output { display: inline-block; }
 .on-ink h3,
 .on-ink h4 { color: var(--color-ink-fg); }
 
-.on-ink .label { color: var(--color-ink-accent); }
-.on-ink .lead,
-.on-ink .section-head p { color: var(--color-ink-muted); }
+/* Les jetons redéfinis plus haut suffisent : le surtitre reste dans le ton
+   sourd, sur papier comme en salle sombre. Une seule exception assumée, le
+   héros, où il passe en bronze. Le pied de page garde ses intitulés en bronze
+   parce qu'ils jouent un autre rôle : des têtes de colonne. */
 .on-ink .rule { background: var(--color-ink-rule); }
 
 .visually-hidden {
